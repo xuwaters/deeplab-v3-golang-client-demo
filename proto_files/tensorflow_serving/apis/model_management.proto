@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "tensorflow/tensorflow_serving";
+
+import "tensorflow_serving/config/model_server_config.proto";
+import "tensorflow_serving/util/status.proto";
+
+package tensorflow.serving;
+option cc_enable_arenas = true;
+
+message ReloadConfigRequest {
+  ModelServerConfig config = 1;
+}
+
+message ReloadConfigResponse {
+  StatusProto status = 1;
+}
